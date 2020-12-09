@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="658.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RESTMAN.ProfileController">
+    <children>
+        <ImageView fx:id="imguser" fitHeight="157.0" fitWidth="127.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../users.png" />
+            </image>
+
+        </ImageView>
+        <HBox fx:id="HB" alignment="CENTER" layoutX="269.0" layoutY="74.0" prefHeight="78.0" prefWidth="564.0" spacing="50.0" style="-fx-background-color: e6e6e6;">
+            <children>
+                <VBox fx:id="VB_nbr_cmd" alignment="CENTER" prefHeight="78.0" prefWidth="148.0">
+                    <children>
+                        <Label fx:id="Label_nbr_cmd" text="-" textFill="#15bc44">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="Txt_nbr_cmd" text="Nombre de commandes" />
+                    </children>
+                </VBox>
+                <VBox fx:id="VB_val_cmd" alignment="CENTER" prefHeight="78.0" prefWidth="153.0">
+                    <children>
+                        <Label fx:id="Label_val_cmd" text="-" textFill="#3228bd">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                        <Label text="Valeur de commandes" />
+                    </children>
+                </VBox>
+                <VBox fx:id="VB_nbr_bonus" alignment="CENTER" prefHeight="92.0" prefWidth="141.0">
+                    <children>
+                        <Label fx:id="Label_nbr_bonus" text="-" textFill="#d43737">
+                            <font>
+                                <Font name="System Bold" size="26.0" />
+                            </font>
+                        </Label>
+                        <Label text="Nombre de Bonus gagnés" textFill="#404040" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Text fill="#9a6868" layoutX="154.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="141.13671875">
+            <font>
+                <Font size="45.0" />
+            </font>
+        </Text>
+        <Text layoutX="418.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" wrappingWidth="53.0" />
+        <Label fx:id="userid" layoutX="529.0" layoutY="186.0" text="-" />
+        <Text layoutX="378.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type d'utilisateur" />
+        <Text layoutX="414.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+        <TextField fx:id="username" layoutX="484.0" layoutY="265.0" />
+        <Text layoutX="400.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
+        <PasswordField fx:id="MDP" layoutX="482.0" layoutY="313.0" />
+        <Text layoutX="446.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+        <TextField fx:id="TF_nom" layoutX="484.0" layoutY="359.0" />
+        <Text layoutX="430.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="41.712890625" />
+        <TextField fx:id="TF_prenom" layoutX="487.0" layoutY="409.0" />
+        <Text layoutX="452.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel" />
+        <TextField fx:id="TF_tel" layoutX="487.0" layoutY="455.0" prefHeight="25.0" prefWidth="127.0" />
+        <Text layoutX="435.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
+        <TextField fx:id="TF_email" layoutX="487.0" layoutY="498.0" />
+        <Text layoutX="431.0" layoutY="558.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse" />
+        <TextField fx:id="TF_adresse" layoutX="485.0" layoutY="541.0" prefHeight="25.0" prefWidth="162.0" />
+        <Button fx:id="BtnQuitter" layoutX="14.0" layoutY="600.0" mnemonicParsing="false" onAction="#CloseProfile" prefHeight="44.0" prefWidth="100.0" text="Quitter">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="BtnModifier" layoutX="908.0" layoutY="599.0" mnemonicParsing="false" onAction="#updateusers" prefHeight="46.0" prefWidth="91.0" text="Valider">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+      <Label fx:id="usertype" layoutX="532.0" layoutY="226.0" text="-" />
+      <Label layoutX="470.0" layoutY="269.0" text="*" textFill="RED" />
+      <Label layoutX="473.0" layoutY="317.0" text="*" textFill="RED" />
+      <Label layoutX="473.0" layoutY="363.0" text="*" textFill="RED" />
+      <Label layoutX="473.0" layoutY="413.0" text="*" textFill="RED" />
+    </children>
+</AnchorPane>

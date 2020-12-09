@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="658.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RESTMAN.CommandesController">
+    <children>
+        <TableView fx:id="Table" layoutX="370.0" layoutY="107.0" onKeyPressed="#loadData" onMouseClicked="#loadData" prefHeight="516.0" prefWidth="637.0">
+            <columns>
+                <TableColumn fx:id="c1" prefWidth="43.0" text="Id" />
+                <TableColumn fx:id="c2" prefWidth="131.0" text="date" />
+                <TableColumn fx:id="c3" prefWidth="103.0" text="type" />
+                <TableColumn fx:id="c4" prefWidth="50.0" text="client id" />
+                <TableColumn fx:id="c5" prefWidth="141.0" text="client " />
+                <TableColumn fx:id="c6" prefWidth="81.0" text="montant" />
+                <TableColumn fx:id="c7" minWidth="0.0" prefWidth="40.0" text="reglé" />
+                <TableColumn fx:id="c8" prefWidth="47.0" text="cloturé" />
+            </columns>
+        </TableView>
+        <ImageView fx:id="imguser" fitHeight="199.0" fitWidth="185.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../commande.png" />
+            </image>
+
+        </ImageView>
+        <Text fill="#9a6868" layoutX="176.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commandes" wrappingWidth="256.13671875">
+            <font>
+                <Font size="45.0" />
+            </font>
+        </Text>
+        <Button fx:id="BtnQuitter" layoutX="14.0" layoutY="600.0" mnemonicParsing="false" onAction="#CloseCommandes" prefHeight="44.0" prefWidth="100.0" text="Quitter">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <CheckBox fx:id="cloture_cb" layoutX="288.0" layoutY="252.0" mnemonicParsing="false" onAction="#cloturer" text="Cloturé" />
+        <CheckBox fx:id="regle_cb" layoutX="186.0" layoutY="252.0" mnemonicParsing="false" onAction="#regler" text="Reglé" />
+        <Button fx:id="BtnAjouter" layoutX="20.0" layoutY="287.0" mnemonicParsing="false" onAction="#OpenLigneCommandeAjout" prefHeight="44.0" prefWidth="123.0" text="Ajouter">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="BtnSupprimer" layoutX="20.0" layoutY="335.0" mnemonicParsing="false" onAction="#deleteCommandes" prefHeight="46.0" prefWidth="123.0" text="Supprimer">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="BtnModifier" layoutX="20.0" layoutY="385.0" mnemonicParsing="false" onAction="#OpenLigneCommandeModif" prefHeight="46.0" prefWidth="122.0" text="modifier">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+      <Pane fx:id="Pane_prixlivraison" layoutX="710.0" layoutY="14.0" prefHeight="53.0" prefWidth="271.0" style="-fx-border-color: grey;">
+         <children>
+            <Label fx:id="prixlivraison" layoutX="111.0" layoutY="15.0" prefHeight="25.0" prefWidth="51.0" />
+            <Label layoutX="21.0" layoutY="19.0" text="Prix de livraison " />
+            <Label layoutX="163.0" layoutY="19.0" text="DA" />
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>

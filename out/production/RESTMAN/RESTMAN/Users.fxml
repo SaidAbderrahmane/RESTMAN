@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="658.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RESTMAN.UsersController">
+    <children>
+        <TableView fx:id="tableU" layoutX="401.0" layoutY="118.0" onMouseClicked="#loadData" prefHeight="504.0" prefWidth="616.0">
+            <columns>
+                <TableColumn fx:id="c1" prefWidth="41.0" text="id" />
+                <TableColumn fx:id="c2" prefWidth="81.0" text="type" />
+                <TableColumn fx:id="c3" prefWidth="99.0" text="username" />
+                <TableColumn fx:id="c4" prefWidth="100.0" text="nom" />
+                <TableColumn fx:id="c5" prefWidth="73.0" text="prenom" />
+                <TableColumn fx:id="c6" prefWidth="61.0" text="tel" />
+                <TableColumn fx:id="c7" prefWidth="70.0" text="email" />
+                <TableColumn fx:id="c8" prefWidth="90.0" text="adresse" />
+            </columns>
+        </TableView>
+        <ImageView fx:id="imguser" fitHeight="157.0" fitWidth="127.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../users.png" />
+            </image>
+
+        </ImageView>
+        <Text fill="#9a6868" layoutX="196.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Utilisateurs" wrappingWidth="232.13671875">
+            <font>
+                <Font size="45.0" />
+            </font>
+        </Text>
+        <Text layoutX="144.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" wrappingWidth="53.0" />
+        <Label fx:id="userid" layoutX="255.0" layoutY="168.0" text="-" />
+        <Text layoutX="104.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type d'utilisateur" />
+        <ChoiceBox fx:id="usertype" layoutX="210.0" layoutY="205.0" prefWidth="150.0" />
+        <Text layoutX="140.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+        <TextField fx:id="username" layoutX="210.0" layoutY="247.0" />
+        <Text layoutX="126.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" />
+        <PasswordField fx:id="MDP" layoutX="208.0" layoutY="295.0" />
+        <Text layoutX="172.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+        <TextField fx:id="TF_nom" layoutX="210.0" layoutY="341.0" />
+        <Text layoutX="156.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="41.712890625" />
+        <TextField fx:id="TF_prenom" layoutX="213.0" layoutY="391.0" />
+        <Text layoutX="178.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel" />
+        <TextField fx:id="TF_tel" layoutX="213.0" layoutY="437.0" prefHeight="25.0" prefWidth="127.0" />
+        <Text layoutX="161.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
+        <TextField fx:id="TF_email" layoutX="213.0" layoutY="480.0" />
+        <Text layoutX="157.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse" />
+        <TextField fx:id="TF_adresse" layoutX="211.0" layoutY="523.0" prefHeight="25.0" prefWidth="162.0" />
+        <Button fx:id="BtnVider" layoutX="320.0" layoutY="585.0" mnemonicParsing="false" onAction="#Vider" prefHeight="17.0" prefWidth="53.0" text="Vider">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="BtnQuitter" layoutX="14.0" layoutY="600.0" mnemonicParsing="false" onAction="#CloseUsers" prefHeight="44.0" prefWidth="100.0" text="Quitter">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="BtnAjouter" layoutX="8.0" layoutY="259.0" mnemonicParsing="false" onAction="#addUsers" prefHeight="44.0" prefWidth="91.0" text="Ajouter">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+        <Button fx:id="BtnSupprimer" layoutX="8.0" layoutY="307.0" mnemonicParsing="false" onAction="#deleteUsers" prefHeight="46.0" prefWidth="91.0" text="Supprimer">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+        <Button fx:id="BtnModifier" layoutX="8.0" layoutY="357.0" mnemonicParsing="false" onAction="#updateusers" prefHeight="46.0" prefWidth="91.0" text="modifier">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

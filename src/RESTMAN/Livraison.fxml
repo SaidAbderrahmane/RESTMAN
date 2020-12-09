@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="658.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RESTMAN.LivraisonController">
+    <children>
+        <Pane fx:id="livreur_pane" layoutX="739.0" layoutY="34.0" prefHeight="204.0" prefWidth="270.0">
+            <children>
+                <CheckBox fx:id="recu_cb" layoutX="154.0" layoutY="182.0" mnemonicParsing="false" onAction="#mettreRecu" text="Commande reçu" />
+            <Pane layoutX="8.0" prefHeight="139.0" prefWidth="258.0" style="-fx-border-color: grey;">
+               <children>
+                      <Text layoutX="29.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Livreur" />
+                      <ComboBox fx:id="livreur_combo" layoutX="100.0" layoutY="12.0" prefWidth="150.0" />
+                      <TextField fx:id="tps_restant" layoutX="142.0" layoutY="75.0" prefHeight="25.0" prefWidth="82.0" />
+                      <Text layoutX="8.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps restant estimé" />
+                      <Text layoutX="229.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min" />
+                  <Button fx:id="BtnValider" layoutX="169.0" layoutY="126.0" mnemonicParsing="false" onAction="#updateLivraison" prefHeight="27.0" prefWidth="66.0" style="-fx-border-color: grey;" text="Valider">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            </children>
+        </Pane>
+        <TableView fx:id="Table" layoutX="40.0" layoutY="325.0" onKeyPressed="#loadData" onMouseClicked="#loadData" prefHeight="319.0" prefWidth="944.0">
+            <columns>
+                <TableColumn fx:id="c1" prefWidth="83.0" text="Id commande" />
+                <TableColumn fx:id="c2" prefWidth="98.0" text="Ville" />
+                <TableColumn fx:id="c3" prefWidth="153.0" text="Adresse1" />
+                <TableColumn fx:id="c4" prefWidth="152.0" text="Adresse2" />
+                <TableColumn fx:id="c5" prefWidth="88.0" text="Code postal" />
+                <TableColumn fx:id="c6" prefWidth="85.0" text="Tel" />
+                <TableColumn fx:id="c7" prefWidth="106.0" text="Livreur" />
+                <TableColumn fx:id="c8" prefWidth="68.0" text="Reçu" />
+                <TableColumn fx:id="c9" prefWidth="110.0" text="Date reception" />
+            </columns>
+        </TableView>
+        <ImageView fx:id="imguser" fitHeight="196.0" fitWidth="141.0" layoutX="33.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Livraison.png" />
+            </image>
+
+        </ImageView>
+        <Text fill="#9a6868" layoutX="177.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Livraison" wrappingWidth="232.13671875">
+            <font>
+                <Font size="45.0" />
+            </font>
+        </Text>
+        <Button fx:id="BtnQuitter" layoutX="10.0" layoutY="247.0" mnemonicParsing="false" onAction="#CloseLivraison" prefHeight="25.0" prefWidth="66.0" text="Quitter">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Pane fx:id="client_pane" layoutX="364.0" layoutY="74.0" prefHeight="76.0" prefWidth="372.0">
+         <children>
+                <Text layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps restant estimé :" wrappingWidth="157.138671875">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+                <Label fx:id="tps_restant_label" layoutX="171.0" layoutY="51.0" prefHeight="21.0" prefWidth="25.0" text="  -">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Text layoutX="205.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min" wrappingWidth="25.3955078125">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text layoutX="8.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date et heure de départ :" wrappingWidth="173.138671875">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Label fx:id="date_depart_label" layoutX="183.0" layoutY="4.0" prefHeight="21.0" prefWidth="184.0" text="        -">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+        </Pane>
+        <Slider fx:id="etat_slider" blockIncrement="2.0" layoutX="289.0" layoutY="249.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="1" prefHeight="50.0" prefWidth="460.0" snapToTicks="true" value="1.0" />
+        <Text layoutX="250.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="commande passée">
+            <font>
+                <Font name="Segoe UI Light" size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="413.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="en train de prépartion" wrappingWidth="66.0">
+            <font>
+                <Font name="Segoe UI Light" size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="564.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expédié">
+            <font>
+                <Font name="Segoe UI Light" size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="723.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="arrivé">
+            <font>
+                <Font name="Segoe UI Light" size="14.0" />
+            </font>
+        </Text>
+      <ImageView fitHeight="76.0" fitWidth="66.0" layoutX="260.0" layoutY="186.0">
+         <image>
+            <Image url="@../completed-task.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="76.0" fitWidth="76.0" layoutX="546.0" layoutY="189.0">
+         <image>
+            <Image url="@../express-delivery.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="76.0" fitWidth="76.0" layoutX="403.0" layoutY="186.0">
+         <image>
+            <Image url="@../archive.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="53.0" layoutX="713.0" layoutY="201.0">
+         <image>
+            <Image url="@../checked.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

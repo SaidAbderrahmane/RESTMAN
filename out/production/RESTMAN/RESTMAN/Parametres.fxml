@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="ParametresPane" prefHeight="361.0" prefWidth="453.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RESTMAN.ParametresController">
+   <children>
+      <Pane prefHeight="83.0" prefWidth="453.0" style="-fx-background-color: #c9cfd4;">
+         <children>
+            <Text fill="#716f79" layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parametres" wrappingWidth="292.13671875">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <TextField fx:id="TF_seuil_nbr_cmd" layoutX="292.0" layoutY="193.0" prefHeight="25.0" prefWidth="102.0" />
+      <Text layoutX="81.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix de livraison ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="TF_prixlivraison" layoutX="292.0" layoutY="142.0" prefHeight="25.0" prefWidth="102.0" />
+      <Text layoutX="9.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seuil nombre de commandes">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="TF_seuil_val_cmd" layoutX="292.0" layoutY="244.0" prefHeight="25.0" prefWidth="102.0" />
+      <Text layoutX="15.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seuil Valeur de commandes">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="BtnValider" layoutX="339.0" layoutY="319.0" mnemonicParsing="false" onAction="#ValiderParametres" prefHeight="37.0" prefWidth="102.0" text="Valider">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="21.0">
+               <image>
+                  <Image url="@../checked.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="BtnQuitter" layoutX="15.0" layoutY="316.0" mnemonicParsing="false" onAction="#CloseParametres" prefHeight="37.0" prefWidth="102.0" text="Quitter">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="23.0">
+               <image>
+                  <Image url="@../images/icons8_Sign_Out_32px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text layoutX="406.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DA">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="406.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DA">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="658.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RESTMAN.StatsController">
+    <children>
+        <TabPane prefHeight="600.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Aperçu">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" layoutX="190.0" layoutY="187.0" prefHeight="106.0" prefWidth="676.0" spacing="50.0">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="130.0">
+                                            <children>
+                                                <Label fx:id="Label_nbr_clients" text="-" textFill="#2a73ff">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Nombre de Clients" />
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="115.0">
+                                            <children>
+                                                <Label fx:id="Label_nbr_livreurs" text="-" textFill="#26bfbc">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Nombre de livreurs" />
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="141.0">
+                                            <children>
+                                                <Label fx:id="Label_CA" text="-" textFill="#fa5f7e">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Chiffre d'affaire" textFill="#404040" />
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="115.0">
+                                            <children>
+                                                <Label fx:id="Label_CM" text="-" textFill="#de0000">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Chiffre monsuel" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Commandes">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <PieChart fx:id="pie_cmd" layoutX="20.0" layoutY="221.0" prefHeight="336.0" prefWidth="483.0" />
+                                <PieChart fx:id="pie_cmd2" layoutX="550.0" layoutY="221.0" prefHeight="336.0" prefWidth="483.0" />
+                                <HBox alignment="CENTER_LEFT" layoutX="149.0" layoutY="117.0" prefHeight="92.0" prefWidth="687.0" spacing="50.0">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="232.0">
+                                            <children>
+                                                <Label fx:id="Label_nbr_sur_place" text="-" textFill="#041586">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label prefHeight="12.0" prefWidth="127.0" text="Commandes sur place" textAlignment="CENTER" wrapText="true" />
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="245.0">
+                                            <children>
+                                                <Label fx:id="Label_nbr_a_distance" text="-" textFill="#e4791b">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label prefHeight="13.0" prefWidth="130.0" text="Commandes à distance" textAlignment="CENTER" wrapText="true" />
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="CENTER" prefHeight="92.0" prefWidth="235.0">
+                                            <children>
+                                                <Label fx:id="Label_CM_sur_place" text="-" textFill="#de0000">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label prefHeight="36.0" prefWidth="115.0" text="Val de commandes sur place" textAlignment="CENTER" wrapText="true" />
+                                            </children>
+                                        </VBox>
+                              <VBox alignment="CENTER" prefHeight="92.0" prefWidth="198.0">
+                                 <children>
+                                    <Label fx:id="Label_CM_a_distance" text="-" textFill="#de0000">
+                                       <font>
+                                          <Font name="System Bold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="36.0" prefWidth="115.0" text="Val de commandes à distance" textAlignment="CENTER" wrapText="true" />
+                                 </children>
+                              </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox layoutX="253.0" layoutY="28.0" prefHeight="89.0" prefWidth="468.0">
+                                    <children>
+                                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="154.0">
+                                            <children>
+                                                <Label fx:id="Label_total_cmd" text="-" textFill="#2a73ff">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Total des commandes" />
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="CENTER" prefHeight="89.0" prefWidth="166.0">
+                                            <children>
+                                                <Label fx:id="Label_cmd_en_attente" text="-" textFill="#fa5f7e">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Commandes en attente" textFill="#404040" />
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="CENTER" prefHeight="89.0" prefWidth="148.0">
+                                            <children>
+                                                <Label fx:id="Label_total_recu" text="-" textFill="#26bfbc">
+                                                    <font>
+                                                        <Font name="System Bold" size="26.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label text="Total reçu" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Articles">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" layoutX="174.0" layoutY="27.0" prefHeight="106.0" prefWidth="676.0" spacing="50.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="92.0" prefWidth="130.0">
+                                 <children>
+                                    <Label fx:id="Label_total_articles" text="-" textFill="#2a73ff">
+                                       <font>
+                                          <Font name="System Bold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Total d'articles" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="92.0" prefWidth="115.0">
+                                 <children>
+                                    <Label fx:id="Label_nbr_plats" text="-" textFill="#26bfbc">
+                                       <font>
+                                          <Font name="System Bold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Nombre de Plats" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="92.0" prefWidth="141.0">
+                                 <children>
+                                    <Label fx:id="Label_nbr_boissons" text="-" textFill="#fa5f7e">
+                                       <font>
+                                          <Font name="System Bold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Nombre de boissons" textFill="#404040" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="92.0" prefWidth="115.0">
+                                 <children>
+                                    <Label fx:id="Label_nbr_dessets" text="-" textFill="#de0000">
+                                       <font>
+                                          <Font name="System Bold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="Nombre de desserts" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <BarChart fx:id="Bar_top5_plats" layoutX="14.0" layoutY="168.0" prefHeight="344.0" prefWidth="457.0">
+                          <xAxis>
+                            <CategoryAxis label="Plat" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis label="Qte commandée" side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <BarChart fx:id="Bar_top5_boissons" layoutX="524.0" layoutY="168.0" prefHeight="344.0" prefWidth="457.0">
+                           <xAxis>
+                              <CategoryAxis label="Boisson" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis label="Qte commandée" side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Clients">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" layoutX="475.0" layoutY="29.0" prefHeight="69.0" prefWidth="125.0" spacing="50.0" />
+                        <BarChart fx:id="Bar_top5_client_nbr" layoutX="14.0" layoutY="11.0" prefHeight="293.0" prefWidth="461.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis label="Qte commandée" side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                        <BarChart fx:id="Bar_top5_client_val" layoutX="588.0" layoutY="12.0" prefHeight="292.0" prefWidth="422.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis label="Valeur des commandes" side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                        <TableView fx:id="Table_client" layoutX="235.0" layoutY="307.0" prefHeight="262.0" prefWidth="586.0">
+                          <columns>
+                            <TableColumn fx:id="Client_c1" prefWidth="54.0" text="Id" />
+                            <TableColumn fx:id="Client_c2" prefWidth="242.0" text="Nom" />
+                              <TableColumn fx:id="Client_c3" prefWidth="138.0" text="Nbr des commandes" />
+                              <TableColumn fx:id="Client_c4" prefWidth="150.0" text="Valeur des commandes" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Livreurs">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="Bar_top5_livreur" layoutX="58.0" layoutY="164.0" prefHeight="279.0" prefWidth="454.0">
+                           <xAxis>
+                              <CategoryAxis label="Livreur" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis label="Nbr de livraisons" side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                        <TableView fx:id="Table_livreur" layoutX="611.0" layoutY="155.0" prefHeight="317.0" prefWidth="350.0">
+                          <columns>
+                            <TableColumn fx:id="Livreur_c1" prefWidth="75.0" text="Id" />
+                            <TableColumn fx:id="Livreur_c2" prefWidth="169.0" text="Livreur" />
+                              <TableColumn fx:id="Livreur_c3" prefWidth="105.0" text="Nbr de livraisons" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="BtnQuitter" layoutX="14.0" layoutY="604.0" mnemonicParsing="false" onAction="#CloseStats" prefHeight="44.0" prefWidth="99.0" text="Quitter">
+        </Button>
+    </children>
+</AnchorPane>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="658.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RESTMAN.FicheTechniqueController">
+    <children>
+        <Text layoutX="355.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Article :" wrappingWidth="45.0" />
+        <Text layoutX="347.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorie :" />
+        <ImageView fx:id="imguser" fitHeight="184.0" fitWidth="209.0" layoutX="59.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../FT.png" />
+            </image>
+
+        </ImageView>
+        <Text fill="#9a6868" layoutX="352.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fiche Technique" wrappingWidth="336.13671875">
+            <font>
+                <Font size="45.0" />
+            </font>
+        </Text>
+        <Button fx:id="BtnQuitter" layoutX="14.0" layoutY="600.0" mnemonicParsing="false" onAction="#CloseFicheTechnique" prefHeight="44.0" prefWidth="100.0" text="Quitter">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Text layoutX="347.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialité :" />
+        <Button fx:id="BtnValiderFT" layoutX="907.0" layoutY="613.0" mnemonicParsing="false" onAction="#validerFT" prefHeight="24.0" prefWidth="89.0" text="Valider">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+        <Label fx:id="Label_spec" layoutX="423.0" layoutY="202.0" prefHeight="17.0" prefWidth="89.0" text="-" />
+        <Label fx:id="Label_article" layoutX="423.0" layoutY="127.0" prefHeight="17.0" prefWidth="89.0" text="-" />
+        <TableView fx:id="Table_ingredients" layoutX="661.0" layoutY="115.0" prefHeight="192.0" prefWidth="336.0">
+            <columns>
+                <TableColumn fx:id="ing_c1" prefWidth="163.0" text="Ingredient" />
+                <TableColumn fx:id="ing_c2" prefWidth="78.0" text="Quantite" />
+                <TableColumn fx:id="ing_c3" prefWidth="51.0" text="Unité" />
+                <TableColumn fx:id="ing_c4" prefWidth="43.0" text="Prix U" />
+            </columns>
+        </TableView>
+        <Text layoutX="476.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DA" />
+        <Text layoutX="674.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La Liste des ingredients :" wrappingWidth="244.0">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Text>
+        <Button fx:id="BtnSupprimerIng" layoutX="576.0" layoutY="179.0" mnemonicParsing="false" onAction="#supprimerIngredients" prefHeight="32.0" prefWidth="78.0" text="Supprimer">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Label fx:id="Label_cat" layoutX="423.0" layoutY="163.0" prefHeight="17.0" prefWidth="89.0" text="-" />
+        <Text layoutX="191.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Méthode de prépation :" wrappingWidth="244.0">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Text>
+        <Button fx:id="BtnSupprimerPrep" layoutX="78.0" layoutY="401.0" mnemonicParsing="false" onAction="#supprimerPreparation" prefHeight="32.0" prefWidth="78.0" text="Supprimer">
+         <font>
+            <Font size="13.0" />
+         </font>
+        </Button>
+        <TableView fx:id="Table_preparation" fixedCellSize="100" layoutX="164.0" layoutY="335.0" prefHeight="309.0" prefWidth="706.0" style="fx-text-wrap: true;">
+            <columns>
+                <TableColumn fx:id="c1" prefWidth="90.0" text="Num. d'étape" />
+                <TableColumn fx:id="c2" prefWidth="176.0" text="Nom d'étape" />
+                <TableColumn fx:id="c3" prefWidth="125.0" text="Temps Necessaire" />
+                <TableColumn fx:id="c4" prefWidth="320.0" text="Description" />
+            </columns>
+        </TableView>
+        <Text layoutX="375.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix :" />
+        <Label fx:id="Label_prix" layoutX="422.0" layoutY="238.0" prefHeight="17.0" prefWidth="45.0" text="-  " />
+      <Button fx:id="BtnAjouterPrep" layoutX="78.0" layoutY="358.0" mnemonicParsing="false" onAction="#ajouterPreparation" prefHeight="32.0" prefWidth="78.0" text="Ajouter">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="BtnAjouterIng" layoutX="576.0" layoutY="140.0" mnemonicParsing="false" onAction="#ajouterIngredient" prefHeight="32.0" prefWidth="78.0" text="Ajouter">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="BtnSuivant" layoutX="512.0" layoutY="124.0" mnemonicParsing="false" onAction="#Suivant" onKeyPressed="#Suivant" prefHeight="32.0" prefWidth="45.0" text="&gt;&gt;" />
+      <Button fx:id="BtnPrecedent" layoutX="278.0" layoutY="123.0" mnemonicParsing="false" onAction="#Precedent" onKeyPressed="#Precedent" prefHeight="32.0" prefWidth="45.0" text="&lt;&lt;" />
+      <Pane fx:id="Pane_coutparportion" layoutX="736.0" layoutY="305.0" prefHeight="29.0" prefWidth="229.0">
+         <children>
+            <Text layoutX="31.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coûts par portion:" />
+            <Label fx:id="coutparportion" layoutX="144.0" layoutY="4.0" prefHeight="17.0" prefWidth="45.0" text="-  " />
+            <Text layoutX="189.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DA" />
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>
